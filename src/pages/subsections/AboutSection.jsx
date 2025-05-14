@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { IoSchool } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
-import { FaCode } from "react-icons/fa6";
+import { FaCode, FaLocationDot } from "react-icons/fa6";
+import { BsStack } from "react-icons/bs";
+import { BiHeadphone } from "react-icons/bi";
 
 import resume from "../../assets/myresume.pdf";
 import ResumeModal from "../../components/about_components/ResumeModal";
@@ -25,9 +27,9 @@ const AboutSection = () => {
           <div className="lg:w-1/2 w-full bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700">
             <div className="flex gap-x-3">
               <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
-                <FaUser className="text-lg text-[#8AB4F8]" />
+                <FaUser className="text-base text-[#8AB4F8]" />
               </div>
-              <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+              <h3 className="text-2xl font-semibold text-[#8AB4F8]">
                 Who Am I?
               </h3>
             </div>
@@ -64,9 +66,9 @@ const AboutSection = () => {
             {/* Education */}
             <div className="flex gap-x-3">
               <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
-                <IoSchool className="text-xl text-[#8AB4F8]" />
+                <IoSchool className="text-lg text-[#8AB4F8]" />
               </div>
-              <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+              <h3 className="text-2xl font-semibold text-[#8AB4F8]">
                 Education
               </h3>
             </div>
@@ -111,29 +113,6 @@ const AboutSection = () => {
                 </div>
               </li>
             </ul>
-
-            {/* Key Expertise */}
-            {/* <h3 className="text-3xl font-semibold text-[#8AB4F8] mt-6">
-              Key Expertise
-            </h3>
-            <div className="flex flex-wrap gap-3 mt-4">
-              {[
-                "React.js",
-                "Node.js",
-                "MongoDB",
-                "TailwindCSS",
-                "GSAP",
-                "Framer Motion",
-              ].map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-[#1E2531] border border-gray-600 rounded-lg text-sm text-gray-300 hover:bg-[#293241] transition-all"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div> */}
           </div>
         </div>
 
@@ -143,14 +122,14 @@ const AboutSection = () => {
           <div className="lg:w-1/2 w-full bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700">
             <div className="flex gap-x-3">
               <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
-                <FaCode className="text-lg text-[#8AB4F8]" />
+                <FaCode className="text-base text-[#8AB4F8]" />
               </div>
-              <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+              <h3 className="text-2xl font-semibold text-[#8AB4F8]">
                 Coding Profile
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 grid-rows-2 gap-2 mt-6">
+            <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-6">
               {codingProfileData.map((data, index) => (
                 <CodingProfileCard
                   key={index}
@@ -170,29 +149,54 @@ const AboutSection = () => {
             <div className="row-span-1 bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700">
               <div className="flex gap-x-3">
                 <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
-                  <FaCode className="text-lg text-[#8AB4F8]" />
+                  <BsStack className="text-base text-[#8AB4F8]" />
                 </div>
-                <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+                <h3 className="text-2xl font-semibold text-[#8AB4F8]">
                   Key Experties
                 </h3>
               </div>
 
               <div className="mt-3 max-w-full overflow-x-hidden flex items-center gap-x-3">
-                {
-                  keyExperties.map((item, key)=>(
-                    <img key={key} src={item} alt={`${item}-logo`} />
-                  ))
-                }
+                {keyExperties.map((item, key) => (
+                  <img key={key} src={item} alt={`${item}-logo`} />
+                ))}
               </div>
             </div>
 
             {/* Row 2: Split into 2 Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 row-span-1">
               {/* Column 1 */}
-              <div className="bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700"></div>
+              <div className="bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700">
+                <div className="flex gap-x-3">
+                  <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
+                    <FaLocationDot className="text-base text-[#8AB4F8]" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[#8AB4F8]">
+                    Location
+                  </h3>
+                </div>
+                <p className="mt-3 text-[0.95rem] text-[#ccc]">
+                  Alandi, Pune, Maharashtra - 412105
+                </p>
+              </div>
 
               {/* Column 2 */}
-              <div className="bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700"></div>
+              <div className="bg-[#161B22] p-6 rounded-xl shadow-md border border-gray-700">
+                <div className="flex gap-x-3">
+                  <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
+                    <FaLocationDot className="text-base text-[#8AB4F8]" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[#8AB4F8]">
+                    Hobbies
+                  </h3>
+                </div>
+
+                {/* <ul className="mt-3">
+                  <li className="flex items-center gap-x-3">Listening Songs <BiHeadphone/></li>
+                  <li className="flex items-center gap-x-3">Singing</li>
+                  <li className="flex items-center gap-x-3">Playing ESports Games</li>
+                </ul> */}
+              </div>
             </div>
           </div>
         </div>
