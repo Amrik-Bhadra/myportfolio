@@ -41,7 +41,7 @@ const HeroSection = () => {
     <div
       ref={heroRef}
       id="home"
-      className="h-screen flex flex-col justify-center items-center gap-y-6 text-center
+      className="min-h-screen flex flex-col justify-center items-center gap-y-6 text-center
        bg-[linear-gradient(-20deg,#141414_0%,#1a1a1a_50%,#2b5876_100%)] font-roboto text-white"
     >
       {/* Profile Image with Glow Effect */}
