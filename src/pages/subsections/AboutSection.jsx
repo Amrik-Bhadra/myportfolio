@@ -1,75 +1,104 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaCode } from "react-icons/fa6";
-import { PiCertificate } from "react-icons/pi";
-import { MdWork } from "react-icons/md";
+import { useState } from "react";
+import { IoSchool } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
+import resume from "../../assets/myresume.pdf";
+import ResumeModal from "../../components/about_components/ResumeModal";
 
 const AboutSection = () => {
+  const [openResumeModal, setIsOpenResume] = useState(false);
+
   return (
-    <div id="about" className="h-screen w-full flex flex-col items-center justify-center gap-y-8 bg-[#0D1117] font-roboto text-white px-6">
-      {/* Title */}
-      <motion.h2
-        className="text-4xl font-bold text-[#E2E8F0] uppercase tracking-wide"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        About Me
-      </motion.h2>
-
+    <div
+      id="about"
+      className="relative h-screen bg-[#0D1117] flex flex-col items-center justify-center gap-y-8 text-white px-6"
+    >
+      <h2 className="text-4xl font-bold text-[#E2E8F0] uppercase">About Me</h2>
       <div className="w-[85%] flex flex-col gap-8">
-        {/* Upper Section */}
+        {/* upper section */}
         <div className="flex flex-col lg:flex-row gap-6">
-          {/* Left Side - Description */}
-          <motion.div
-            className="lg:w-1/2 w-full bg-[#161B22] p-8 rounded-xl shadow-md border border-gray-700"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <h3 className="text-3xl font-semibold text-[#8AB4F8]">Who am I?</h3>
-            <p className="text-gray-400 mt-4 leading-relaxed">
-              Hi, I'm{" "}
-              <span className="text-[#60A5FA] font-semibold">
-                Amrik Bhadra
-              </span>
-              , a passionate{" "}
-              <span className="text-[#8AB4F8]">Web Developer</span> and{" "}
-              <span className="text-[#8AB4F8]">UI Designer</span>. I specialize
-              in crafting modern, interactive web applications using{" "}
-              <span className="text-[#60A5FA] font-medium">React, GSAP,</span>{" "}
-              and <span className="text-[#60A5FA] font-medium">TailwindCSS</span>.
+          {/* left side : description */}
+          <div className="lg:w-1/2 w-full bg-[#161B22] p-8 rounded-xl shadow-md border border-gray-700">
+            <div className="flex gap-x-3">
+              <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
+                <FaUser className="text-lg text-[#8AB4F8]" />
+              </div>
+              <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+                Who Am I?
+              </h3>
+            </div>
+            <p className="text-gray-400 mt-4 text-justify">
+              Hi, I am a Third-year Computer Engineering student with a passion
+              for Java development and Cloud Services. Also having hands-on
+              experience of building applications using React.js and Express.js,
+              with deployments on AWS EC2. Always eager to learn new
+              technologies and concepts, upskilling myself and contributing
+              effectively to real-world projects.
             </p>
-            <motion.a
-              href="/resume.pdf"
-              download
-              className="mt-6 inline-block px-6 py-3 bg-[#60A5FA] text-white rounded-full text-lg shadow-lg hover:bg-[#4F8ED9] transition-all"
-              whileHover={{ scale: 1.05 }}
+            <button
+              onClick={() => {
+                setIsOpenResume(true);
+              }}
+              className="mt-6 inline-block px-4 py-2 bg-[#60A5FA] text-white rounded-md text-normal shadow-lg hover:bg-[#4F8ED9] transition-all cursor-pointer"
             >
-              Download Resume
-            </motion.a>
-          </motion.div>
+              View Resume
+            </button>
+          </div>
 
-          {/* Right Side - Education & Key Expertise */}
-          <motion.div
-            className="lg:w-1/2 w-full bg-[#161B22] p-8 rounded-xl shadow-md border border-gray-700"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
+          {/* right side: Education */}
+          <div className="lg:w-1/2 w-full bg-[#161B22] p-8 rounded-xl shadow-md border border-gray-700">
             {/* Education */}
-            <h3 className="text-3xl font-semibold text-[#8AB4F8]">Education</h3>
-            <ul className="text-gray-400 mt-4 space-y-2">
-              <li className="border-l-4 border-[#60A5FA] pl-3">
-                Bachelor’s in Computer Science - XYZ University
+            <div className="flex gap-x-3">
+              <div className="inline-block h-fit w-fit p-2 rounded-md items-center justify-center border border-[#8AB4F8] bg-[#8ab4f82f]">
+                <IoSchool className="text-xl text-[#8AB4F8]" />
+              </div>
+              <h3 className="text-3xl font-semibold text-[#8AB4F8]">
+                Education
+              </h3>
+            </div>
+            <ul className="text-gray-400 mt-6 space-y-2 flex flex-col gap-y-2">
+              <li className="rounded-md pl-4 py-2 flex items-start gap-x-4 border-l-3">
+                <div className="w-full flex flex-col gap-y-2">
+                  <h3 className="text-[#ccc] text-[1.1rem] font-medium">
+                    Narbheram Hansraj English School
+                  </h3>
+
+                  <div className="flex items-center gap-x-7">
+                    <span className="flex gap-x-3 items-center">
+                      <p>STD 12</p>
+                      <p className="px-2 py-1 text-sm font-semibold bg-[#71a5f8] text-white rounded-md">
+                        97.25%
+                      </p>
+                    </span>
+
+                    <span className="flex gap-x-3 items-center">
+                      <p>STD 10</p>
+                      <p className="px-2 py-1 text-sm font-semibold bg-[#71a5f8] text-white rounded-md">
+                        94.60%
+                      </p>
+                    </span>
+                  </div>
+                </div>
               </li>
-              <li className="border-l-4 border-[#60A5FA] pl-3">
-                Courses: Web Development, UI/UX, Data Structures
+              <li className="rounded-md pl-4 py-2 flex items-start gap-x-4 border-l-3">
+                <div className="w-full flex flex-col gap-y-2">
+                  <h3 className="text-[#ccc] text-[1.1rem] font-medium">
+                    MIT Academy of Engineering (2022 - 2026)
+                  </h3>
+
+                  <div className="flex items-center gap-x-7">
+                    <span className="flex gap-x-3 items-center">
+                      <p>CGPA</p>
+                      <p className="px-2 py-1 text-sm font-semibold bg-[#71a5f8] text-white rounded-md">
+                        9.65
+                      </p>
+                    </span>
+                  </div>
+                </div>
               </li>
             </ul>
 
             {/* Key Expertise */}
-            <h3 className="text-3xl font-semibold text-[#8AB4F8] mt-6">
+            {/* <h3 className="text-3xl font-semibold text-[#8AB4F8] mt-6">
               Key Expertise
             </h3>
             <div className="flex flex-wrap gap-3 mt-4">
@@ -81,58 +110,28 @@ const AboutSection = () => {
                 "GSAP",
                 "Framer Motion",
               ].map((skill, index) => (
-                <motion.span
+                <span
                   key={index}
                   className="px-4 py-2 bg-[#1E2531] border border-gray-600 rounded-lg text-sm text-gray-300 hover:bg-[#293241] transition-all"
                   whileHover={{ scale: 1.1 }}
                 >
                   {skill}
-                </motion.span>
+                </span>
               ))}
-            </div>
-          </motion.div>
+            </div> */}
+          </div>
         </div>
-
-        {/* Lower Section: Statistic Cards */}
-        <motion.div
-          className="flex flex-col md:flex-row justify-center gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          {[
-            {
-              title: "Total Projects",
-              value: "10+",
-              icon: <FaCode className="text-[#60A5FA] text-5xl" />,
-            },
-            {
-              title: "Total Certificates",
-              value: "15+",
-              icon: <PiCertificate className="text-[#60A5FA] text-5xl" />,
-            },
-            {
-              title: "Years of Experience",
-              value: "0.6",
-              icon: <MdWork className="text-[#60A5FA] text-5xl" />,
-            },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="w-full md:w-1/3 bg-[#161B22] p-6 text-center rounded-xl shadow-md border border-gray-700 flex flex-col items-center"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="p-4 bg-[#1E2531] rounded-full shadow-md">
-                {stat.icon}
-              </div>
-              <h3 className="text-4xl font-bold text-[#60A5FA] mt-3">
-                {stat.value}
-              </h3>
-              <p className="text-gray-400 mt-2 text-lg">{stat.title}</p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
+
+      {/* resume modal */}
+      {openResumeModal && (
+        <ResumeModal
+          onClose={() => {
+            setIsOpenResume(!openResumeModal);
+          }}
+          resume={resume}
+        />
+      )}
     </div>
   );
 };

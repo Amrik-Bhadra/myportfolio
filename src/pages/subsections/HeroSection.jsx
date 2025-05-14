@@ -82,21 +82,21 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          Web Developer | Designer | Tech Enthusiast
+          Frontend Developer | Java | Cloud Enthusiast
         </motion.h2>
       </div>
 
       {/* Social Media Icons */}
       <div ref={socialRef} className="flex gap-x-5 mt-5">
         {[
-          { href: "https://github.com/", icon: <FaGithub />, label: "GitHub" },
+          { href: "https://github.com/Amrik-Bhadra", icon: <FaGithub />, label: "GitHub" },
           {
-            href: "https://linkedin.com/",
+            href: "https://www.linkedin.com/in/amrik-bhadra/",
             icon: <FaLinkedin />,
             label: "LinkedIn",
           },
           {
-            href: "mailto:your@email.com",
+            href: "mailto:amrik.bhadra@gmail.com",
             icon: <FaEnvelope />,
             label: "Email",
           },
