@@ -5,6 +5,7 @@ import AboutSection from "./subsections/AboutSection";
 import ContactSection from "./subsections/ContactSection";
 import SkillsSection from "./subsections/SkillsSection";
 import FooterSection from "./subsections/FooterSection";
+import ProjectcertificationSection from "./subsections/ProjectcertificationSection";
 
 const MyPortfolio = () => {
   return (
@@ -13,6 +14,7 @@ const MyPortfolio = () => {
       <HeroSection />
       <AboutSection/>
       <SkillsSection/>
+      <ProjectcertificationSection/>
       <ContactSection/>
       <FooterSection/>
     </main>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaUser, FaEnvelope } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
 import { BsStack } from "react-icons/bs";
+import { FaCode } from "react-icons/fa6";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -41,6 +42,7 @@ const Navbar = () => {
     { href: "#home", icon: <GoHomeFill />, label: "Home" },
     { href: "#about", icon: <FaUser />, label: "About" },
     { href: "#skills", icon: <BsStack />, label: "Skills" },
+    { href: "#projects", icon: <FaCode />, label: "Projects" },
     { href: "#contact", icon: <FaEnvelope />, label: "Contact" },
   ];
 
