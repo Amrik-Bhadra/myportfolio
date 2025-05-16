@@ -19,3 +19,13 @@ html, body {
 .animate-blink {
   animation: blink 0.7s infinite;
 }
+
+/* Custom class to hide scrollbars */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
