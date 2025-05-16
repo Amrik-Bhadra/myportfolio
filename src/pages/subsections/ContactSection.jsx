@@ -44,7 +44,7 @@ const ContactSection = () => {
           {/* Social Media Icons */}
           <div className="flex gap-x-4 mt-3">
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/Amrik-Bhadra"
               target="_blank"
               rel="noreferrer"
               className="bg-[#333] rounded-full p-3"
@@ -52,7 +52,7 @@ const ContactSection = () => {
               <FaGithub className="text-[#eee] hover:text-[#8AB4F8] text-2xl" />
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/amrik-bhadra/"
               target="_blank"
               rel="noreferrer"
               className="bg-[#333] rounded-full p-3"
@@ -60,7 +60,7 @@ const ContactSection = () => {
               <FaLinkedin className="text-[#eee] hover:text-[#8AB4F8] text-2xl" />
             </a>
             <a
-              href="mailto:youremail@gmail.com"
+              href="mailto:amrik.bhadra@gmail.com"
               className="bg-[#333] rounded-full p-3"
             >
               <MdEmail className="text-[#eee] hover:text-[#8AB4F8] text-2xl"/>
