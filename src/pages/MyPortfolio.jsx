@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import AboutSection from "./subsections/AboutSection";
 import ContactSection from "./subsections/ContactSection";
 import SkillsSection from "./subsections/SkillsSection";
+import FooterSection from "./subsections/FooterSection";
 
 const MyPortfolio = () => {
   return (
@@ -13,6 +14,7 @@ const MyPortfolio = () => {
       <AboutSection/>
       <SkillsSection/>
       <ContactSection/>
+      <FooterSection/>
     </main>
   );
 };
