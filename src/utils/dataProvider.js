@@ -3,14 +3,19 @@ import codechef from "../assets/icons/codechef.png"
 import hackerrank from "../assets/icons/hackerrank.png"
 import gfg from "../assets/icons/gfg.png"
 
-import html from "../assets/icons/html.png"
-import css from "../assets/icons/css.png"
-import javascript from "../assets/icons/javascript.png"
-import react from "../assets/icons/react.png"
-import java from "../assets/icons/java.png"
-import mysql from "../assets/icons/mysql.png"
-import git from "../assets/icons/git.png"
-import aws from "../assets/icons/aws.png"
+import html from "../assets/icons/html.svg"
+import css from "../assets/icons/css3.svg"
+import javascript from "../assets/icons/javascript.svg"
+import react from "../assets/icons/react.svg"
+import java from "../assets/icons/java.svg"
+import mysql from "../assets/icons/mysql.svg"
+import git from "../assets/icons/git.svg"
+import aws from "../assets/icons/aws.svg"
+import github from "../assets/icons/github.svg"
+import vscode from "../assets/icons/vscode.svg"
+import postman from "../assets/icons/postman.svg"
+import expressjs from "../assets/icons/express.svg"
+import nodejs from "../assets/icons/nodejs.svg"
 
 export const codingProfileData = [
   {
@@ -44,5 +49,28 @@ export const codingProfileData = [
 ];
 
 export const keyExperties = [
-    html, css, javascript, react, java, mysql, git, aws
+  html, css, javascript, react, java, mysql, git, aws
 ]
+
+export const skills = {
+  frontend: [
+    { name: "HTML", image: html },
+    { name: "CSS", image: css },
+    { name: "JavaScript", image: javascript },
+    { name: "React", image: react },
+  ],
+  backend: [
+    { name: "Java", image: java },
+    { name: "Node.js", image: nodejs },
+    { name: "Express.js", image: expressjs },
+  ],
+  database: [{ name: "MySQL", image: mysql }],
+  devops: [{ name: "AWS", image: aws }],
+  tools: [
+    { name: "Git", image: git },
+    { name: "GitHub", image: github },
+    { name: "Postman", image: postman },
+    { name: "VS Code", image: vscode },
+  ],
+};
+

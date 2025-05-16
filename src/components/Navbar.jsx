@@ -40,7 +40,7 @@ const Navbar = () => {
   const navItems = [
     { href: "#home", icon: <GoHomeFill />, label: "Home" },
     { href: "#about", icon: <FaUser />, label: "About" },
-    { href: "#projects", icon: <BsStack />, label: "Skills" },
+    { href: "#skills", icon: <BsStack />, label: "Skills" },
     { href: "#contact", icon: <FaEnvelope />, label: "Contact" },
   ];
 

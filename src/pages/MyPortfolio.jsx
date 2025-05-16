@@ -3,6 +3,7 @@ import HeroSection from "./subsections/HeroSection";
 import Navbar from "../components/Navbar";
 import AboutSection from "./subsections/AboutSection";
 import ContactSection from "./subsections/ContactSection";
+import SkillsSection from "./subsections/SkillsSection";
 
 const MyPortfolio = () => {
   return (
@@ -10,6 +11,7 @@ const MyPortfolio = () => {
       <Navbar />
       <HeroSection />
       <AboutSection/>
+      <SkillsSection/>
       <ContactSection/>
     </main>
   );

@@ -158,7 +158,7 @@ const AboutSection = () => {
 
               <div className="mt-3 max-w-full overflow-x-hidden flex items-center gap-x-3">
                 {keyExperties.map((item, key) => (
-                  <img key={key} src={item} alt={`${item}-logo`} />
+                  <img key={key} src={item} alt={`${item}-logo`} className="w-13"/>
                 ))}
               </div>
             </div>
