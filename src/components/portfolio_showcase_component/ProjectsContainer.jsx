@@ -1,5 +1,6 @@
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const ProjectsContainer = ({ projects }) => {
   return (
@@ -15,7 +16,7 @@ const ProjectsContainer = ({ projects }) => {
             key={index}
             className="bg-[#161B22] border border-gray-600 rounded-lg p-4 flex flex-col shadow-lg transition-transform duration-300"
           >
-            <div className="rounded-md w-full aspect-auto overflow-clip">
+            <div className="rounded-md aspect-auto w-full overflow-clip border border-[#cccccc71]">
               <img
                 src={project.thumbnail}
                 alt={`${project.thumbnail}`}
@@ -35,8 +36,9 @@ const ProjectsContainer = ({ projects }) => {
                 >
                   {project.hosted_type} <FiExternalLink className="text-base" />
                 </a>
-                <button className="text-sm px-3 py-2 rounded-md bg-[#46464661] border border-[#cccccc65]">
+                <button className="text-sm px-3 py-2 rounded-md bg-[#46464661] border border-[#cccccc65] hover:bg-[#8ab4f87b] transition-all ease cursor-pointer flex items-center gap-x-1">
                   View Details
+                  <MdOutlineArrowOutward className="text-base"/>
                 </button>
               </div>
             </div>

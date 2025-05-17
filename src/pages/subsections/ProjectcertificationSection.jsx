@@ -5,7 +5,7 @@ import { GiTrophyCup } from "react-icons/gi";
 import ProjectsContainer from "../../components/portfolio_showcase_component/ProjectsContainer";
 import CertificateContainer from "../../components/portfolio_showcase_component/CertificateContainer";
 import HackathonContainer from "../../components/portfolio_showcase_component/HackathonContainer";
-import { certificates, projects } from "../../utils/dataProvider";
+import { certificates, projects, hackathons } from "../../utils/dataProvider";
 
 const ProjectcertificationSection = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -60,7 +60,7 @@ const ProjectcertificationSection = () => {
               onClick={() => setActiveTab("hackathons")}
             >
               <GiTrophyCup className="text-lg" />
-              <p>Hackathons</p>
+              <p>Hackathons ({hackathons.length})</p>
             </button>
           </div>
         </div>
@@ -74,7 +74,7 @@ const ProjectcertificationSection = () => {
             <CertificateContainer certificates={certificates}/>
           )}
           {activeTab === "hackathons" && (
-            <HackathonContainer/>
+            <HackathonContainer hackathons={hackathons}/>
           )}
         </div>
       </div>

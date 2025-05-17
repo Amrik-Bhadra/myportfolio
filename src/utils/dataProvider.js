@@ -68,6 +68,11 @@ import moviehub_thumbnail from "../assets/projects_thumbnail/moviehub_thumbnail.
 import securemessagewriter_thumbnail from "../assets/projects_thumbnail/securemessagewritter_thumbnail.png";
 import studymitra_thumnail from "../assets/projects_thumbnail/studymitra_thumbnail.png";
 
+// hackathon thumbnail
+import cavista_thumbnail from "../assets/hackathon_thumbnails/cavista_thumbnail.jpg";
+import sih_thumbnail from "../assets/hackathon_thumbnails/sih_thumbnail.jpg";
+import ibm_thumbnail from "../assets/hackathon_thumbnails/ibm_thumbnail.jpg"
+
 
 export const codingProfileData = [
   {
@@ -350,4 +355,43 @@ export const projects = [
     project_link: "https://studymitra.vercel.app/",
     github_link: "https://github.com/Amrik-Bhadra/StudyMitra"
   },
-]
+];
+
+export const hackathons = [
+  {
+    id: 1,
+    title: "Smart India Hackathon 2024 (Finals)",
+    thumbnail: sih_thumbnail,
+    date: "Nov 6, 2024 - Dec 12, 2024",
+    venue: "VIPS-TC, Delhi",
+    team_size: 6,
+    role: "Team Lead, Frondend Developer",
+    description: `Hackathons like SIH are more than competitions; they are experiences that shape us. Over 𝟯𝟲 𝗶𝗻𝘁𝗲𝗻𝘀𝗲 𝗵𝗼𝘂𝗿𝘀⏳ 𝗼𝗳 𝗰𝗼𝗱𝗶𝗻𝗴 💻, we honed our ability to 𝗮𝗱𝗮𝗽𝘁, 𝗰𝗼𝗹𝗹𝗮𝗯𝗼𝗿𝗮𝘁𝗲, 𝗮𝗻𝗱 𝘀𝗼𝗹𝘃𝗲 𝗽𝗿𝗼𝗯𝗹𝗲𝗺𝘀 𝘂𝗻𝗱𝗲𝗿 𝗽𝗿𝗲𝘀𝘀𝘂𝗿𝗲. We gained invaluable skills in 𝗵𝗮𝗻𝗱𝗹𝗶𝗻𝗴 𝗱𝗲𝗮𝗱𝗹𝗶𝗻𝗲𝘀, 𝗮𝗱𝗱𝗿𝗲𝘀𝘀𝗶𝗻𝗴 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱 𝗰𝗵𝗮𝗹𝗹𝗲𝗻𝗴𝗲𝘀, and 𝗶𝗻𝗻𝗼𝘃𝗮𝘁𝗶𝗻𝗴 𝗮𝘁 𝗮 𝗿𝗮𝗽𝗶𝗱 𝗽𝗮𝗰𝗲.🎯💡
+
+    Our team worked on an impactful problem statement (𝗦𝗜𝗛𝟭𝟲𝟱𝟰) provided by the 𝗥𝗔𝗖 𝘂𝗻𝗱𝗲𝗿 𝗗𝗥𝗗𝗢, where we developed an 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗲𝗱 𝗣𝗮𝗻𝗲𝗹 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗶𝗼𝗻 𝗦𝘆𝘀𝘁𝗲𝗺. The project focused on streamlining the creation of interview panels for a particular Board of Subject based on a relevancy score. `
+  },
+  {
+    id: 2,
+    title: "Cavista Tech. Hackathon 2025 (Finals)",
+    thumbnail: cavista_thumbnail,
+    date: "Feb 24, 2024 - Feb 25, 2024",
+    venue: "PCCOE, Pune",
+    team_size: 5,
+    role: "Frontend Developer",
+    description: `My team participated in an intense 24-hour hackathon conducted by Cavista Technologies. The challenge? Solving a healthcare-related problem statement within a day. We chose to work on Inventory Management & Audit Processing, and after an insightful ideation phase, we split tasks efficiently.
+    
+    After 24 hours of non-stop brainstorming, coding, and debugging, we made it to the Top 9 teams! Following the final presentation and pitching round, we secured 5th place. While we aimed higher, this experience was a huge learning opportunity, giving us insights into teamwork, problem-solving under pressure, and mistakes to avoid in the future.`
+  },
+  {
+    id: 3,
+    title: "IBM SkillsBuild Hackathon 2025",
+    thumbnail: ibm_thumbnail,
+    date: "Jan 31, 2025",
+    venue: "The Imperial, Pune",
+    team_size: 2,
+    role: "Web Developer",
+    description: `I recently had the privilege of participating in the 𝗜𝗕𝗠 𝗦𝗸𝗶𝗹𝗹𝘀𝗕𝘂𝗶𝗹𝗱 𝗦𝘁𝗮𝘁𝗲-𝗟𝗲𝘃𝗲𝗹 𝗛𝗮𝗰𝗸𝗮𝘁𝗵𝗼𝗻 alongside my teammate SRIVATHS IYER. Our project addressed a critical challenge faced by micro and small-scale enterprises (𝗠𝗦𝗘𝘀).
+
+    On 𝗝𝗮𝗻𝘂𝗮𝗿𝘆 𝟯𝟭, 𝟮𝟬𝟮𝟱, I attended the IBM SkillsBuild Hackathon Showcase, where the top 10 teams presented their innovative solutions. This event was truly inspiring and provided an excellent opportunity to not only gain fresh insights into cutting-edge solutions but also to network with like-minded individuals and build meaningful connections with other talented teams. The exchange of ideas and knowledge made this experience even more enriching.`
+  }
+];
