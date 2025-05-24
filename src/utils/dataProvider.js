@@ -16,6 +16,8 @@ import vscode from "../assets/icons/vscode.svg";
 import postman from "../assets/icons/postman.svg";
 import expressjs from "../assets/icons/express.svg";
 import nodejs from "../assets/icons/nodejs.svg";
+import canva from "../assets/icons/canva.svg"
+import figma from "../assets/icons/figma.svg"
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -135,6 +137,8 @@ export const skills = {
     { name: "GitHub", image: github },
     { name: "Postman", image: postman },
     { name: "VS Code", image: vscode },
+    { name: "Canva", image: canva },
+    { name: "Figma", image: figma },
   ],
 };
 
