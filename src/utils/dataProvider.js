@@ -131,10 +131,12 @@ export const skills = {
     { name: "Express.js", image: expressjs },
   ],
   database: [{ name: "MySQL", image: mysql }],
-  devops: [{ name: "AWS", image: aws }],
-  tools: [
+  devops: [
     { name: "Git", image: git },
     { name: "GitHub", image: github },
+    { name: "AWS", image: aws }
+  ],
+  tools: [
     { name: "Postman", image: postman },
     { name: "VS Code", image: vscode },
     { name: "Canva", image: canva },
