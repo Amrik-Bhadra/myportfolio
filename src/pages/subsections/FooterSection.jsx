@@ -3,89 +3,135 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const FooterSection = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <div className="py-3 md:py-1 flex items-center justify-center bg-[#161B22] shadow-md border-2 border-gray-700">
-      <div className="w-[85%] py-3 flex flex-col gap-y-20 md:flex-row justify-between items-center">
-        <span className="flex flex-col gap-y-1 items-center md:items-start">
-            <h2 className="text-[#eee] font-semibold text-xl mb-2">Amrik Bhadra</h2>
-            <p className="flex items-center gap-x-2 text-[#8AB4F8] text-base"> <MdEmail/> amrik.bhadra@gmail.com</p>
-            <p className="flex items-center gap-x-2 text-[#8AB4F8] text-base"><FaPhoneAlt/> +91-7739226540</p>
-        </span>
-        
-        <div className="grid grid-cols-2 md:flex md:flex-row gap-y-10 md:gap-x-30">
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#8AB4F8] font-semibold mb-2 uppercase">
+    <footer className="border-t border-white/[0.08] bg-[#0a0e14]/90 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12 flex flex-col gap-y-12 md:flex-row md:justify-between md:items-start gap-x-8">
+        <div className="flex flex-col gap-y-3 items-center md:items-start text-center md:text-left">
+          <h2 className="text-[var(--text-primary)] font-semibold text-xl">Amrik Bhadra</h2>
+          <p className="flex items-center justify-center md:justify-start gap-x-2 text-[var(--accent)] text-sm sm:text-base">
+            <MdEmail className="shrink-0" aria-hidden />
+            <a href="mailto:amrik.bhadra@gmail.com" className="hover:underline underline-offset-4">
+              amrik.bhadra@gmail.com
+            </a>
+          </p>
+          <p className="flex items-center justify-center md:justify-start gap-x-2 text-[var(--accent)] text-sm sm:text-base">
+            <FaPhoneAlt className="shrink-0" aria-hidden />
+            <a href="tel:+917739226540" className="hover:underline underline-offset-4">
+              +91-7739226540
+            </a>
+          </p>
+        </div>
+
+        <nav
+          className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 text-center sm:text-left"
+          aria-label="Footer"
+        >
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <h4 className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest">
               About
             </h4>
-            <ul className="text-sm text-[#ccc] gap-y-1 flex flex-col items-center">
+            <ul className="text-sm text-[var(--text-muted)] flex flex-col gap-y-2">
               <li>
-                <a href="#about">Education</a>
+                <a href="#about" className="hover:text-[var(--text-primary)] transition-colors">
+                  Education
+                </a>
               </li>
               <li>
-                <a href="#about">Key Skills</a>
+                <a href="#about" className="hover:text-[var(--text-primary)] transition-colors">
+                  Coding profile
+                </a>
               </li>
               <li>
-                <a href="#about">Coding Profile</a>
+                <a href="#about" className="hover:text-[var(--text-primary)] transition-colors">
+                  Location
+                </a>
               </li>
               <li>
-                <a href="#about">Hobbies</a>
+                <a href="#experience" className="hover:text-[var(--text-primary)] transition-colors">
+                  Experience
+                </a>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#8AB4F8] font-semibold mb-2 uppercase">
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <h4 className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest">
               Skills
             </h4>
-            <ul className="text-sm text-[#ccc] flex flex-col gap-y-1 items-center">
+            <ul className="text-sm text-[var(--text-muted)] flex flex-col gap-y-2">
               <li>
-                <a href="#skills">Frontend</a>
+                <a href="#skills" className="hover:text-[var(--text-primary)] transition-colors">
+                  Frontend
+                </a>
               </li>
               <li>
-                <a href="#skills">Backend</a>
+                <a href="#skills" className="hover:text-[var(--text-primary)] transition-colors">
+                  Backend
+                </a>
               </li>
               <li>
-                <a href="#skills">Database</a>
-              </li>
-              <li>
-                <a href="#skills">Devops</a>
-              </li>
-              <li>
-                <a href="#skills">Tools</a>
+                <a href="#skills" className="hover:text-[var(--text-primary)] transition-colors">
+                  Cloud &amp; tools
+                </a>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#8AB4F8] font-semibold mb-2 uppercase">
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <h4 className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest">
               Showcase
             </h4>
-            <ul className="text-sm text-[#ccc] flex flex-col gap-y-1 items-center">
+            <ul className="text-sm text-[var(--text-muted)] flex flex-col gap-y-2">
               <li>
-                <a href="#">Projects</a>
+                <a href="#projects" className="hover:text-[var(--text-primary)] transition-colors">
+                  Projects
+                </a>
               </li>
               <li>
-                <a href="#">Certificates</a>
+                <a href="#projects" className="hover:text-[var(--text-primary)] transition-colors">
+                  Achievements
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-[var(--text-primary)] transition-colors">
+                  Certificates
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-[var(--text-primary)] transition-colors">
+                  Hackathons
+                </a>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h4 className="text-[#8AB4F8] font-semibold mb-2 uppercase">
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <h4 className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest">
               Credits
             </h4>
-            <ul className="text-sm text-[#ccc] flex flex-col gap-y-1 items-center">
+            <ul className="text-sm text-[var(--text-muted)] flex flex-col gap-y-2">
               <li>
-                <a href="#">React Icons</a>
+                <a
+                  href="https://react-icons.github.io/react-icons/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--text-primary)] transition-colors"
+                >
+                  React Icons
+                </a>
               </li>
-              <li>
-                Icon Mafia - iconscout
-              </li>
+              <li>Icon sets via IconScout / vendors</li>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
-    </div>
+
+      <div className="border-t border-white/[0.06] py-4 text-center text-xs text-[var(--text-muted)] font-mono">
+        © {year} Amrik Bhadra · Built with React &amp; Vite
+      </div>
+    </footer>
   );
 };
 

@@ -16,8 +16,16 @@ import vscode from "../assets/icons/vscode.svg";
 import postman from "../assets/icons/postman.svg";
 import expressjs from "../assets/icons/express.svg";
 import nodejs from "../assets/icons/nodejs.svg";
-import canva from "../assets/icons/canva.svg"
-import figma from "../assets/icons/figma.svg"
+import canva from "../assets/icons/canva.svg";
+import figma from "../assets/icons/figma.svg";
+import vue from "../assets/icons/vuejs.svg";
+import flutter from "../assets/icons/flutter.svg";
+import dart from "../assets/icons/dart.svg";
+import jira from "../assets/icons/jira.svg";
+import gitlab from "../assets/icons/gitlab.svg";
+import postgres from "../assets/icons/postgres.svg";
+import supabase from "../assets/icons/supabase.svg";
+import mongodb from "../assets/icons/mongodb.svg";
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -73,8 +81,16 @@ import studymitra_thumnail from "../assets/projects_thumbnail/studymitra_thumbna
 // hackathon thumbnail
 import cavista_thumbnail from "../assets/hackathon_thumbnails/cavista_thumbnail.jpg";
 import sih_thumbnail from "../assets/hackathon_thumbnails/sih_thumbnail.jpg";
-import ibm_thumbnail from "../assets/hackathon_thumbnails/ibm_thumbnail.jpg"
+import ibm_thumbnail from "../assets/hackathon_thumbnails/ibm_thumbnail.jpg";
 
+// work experience — company logos
+import logoElasticRun from "../assets/work_experience/elasticrun.png";
+import logoKreedaLabs from "../assets/work_experience/kreedalabs.jpg";
+import logoCoreDecimal from "../assets/work_experience/cds.jpg";
+
+// achievements
+import achievementSecondTopperThirdYear from "../assets/achievements/second-topper-third-year-2026.jpeg";
+import achievementFirstTopperSecondYear from "../assets/achievements/first-topper-second-year-2025.jpeg";
 
 export const codingProfileData = [
   {
@@ -116,6 +132,9 @@ export const keyExperties = [
   mysql,
   git,
   aws,
+  flutter,
+  dart,
+  gitlab
 ];
 
 export const skills = {
@@ -124,25 +143,114 @@ export const skills = {
     { name: "CSS", image: css },
     { name: "JavaScript", image: javascript },
     { name: "React", image: react },
+    { name: "Vue", image: vue },
+    { name: "Flutter", image: flutter },
+    { name: "Dart", image: dart },
   ],
   backend: [
     { name: "Java", image: java },
     { name: "Node.js", image: nodejs },
     { name: "Express.js", image: expressjs },
   ],
-  database: [{ name: "MySQL", image: mysql }],
+  database: [
+    { name: "MySQL", image: mysql },
+    { name: "PostgreSQL", image: postgres },
+    { name: "MongoDB", image: mongodb },
+    { name: "Supabase", image: supabase },
+  ],
   devops: [
     { name: "Git", image: git },
     { name: "GitHub", image: github },
-    { name: "AWS", image: aws }
+    { name: "GitLab", image: gitlab },
+    { name: "AWS", image: aws },
   ],
   tools: [
     { name: "Postman", image: postman },
     { name: "VS Code", image: vscode },
+    { name: "Jira", image: jira },
     { name: "Canva", image: canva },
     { name: "Figma", image: figma },
   ],
 };
+
+/**
+ * Portfolio → Achievements tab. Images live in src/assets/achievements/ (imported below).
+ * Replace the placeholder SVGs with your photos (e.g. .jpg) and update the import paths.
+ */
+export const achievements = [
+  {
+    id: "1",
+    tag: "Education",
+    date: "2026",
+    title: "Second Topper, Third Year, Computer Department",
+    description:
+      "Awarded as the Second Academic Topper for Third Year, in Computer department.",
+    image: achievementSecondTopperThirdYear,
+  },
+  {
+    id: "2",
+    tag: "Education",
+    date: "2025",
+    title: "First Topper, Second Year, Computer Department",
+    description:
+      "Awarded as the First Academic Topper for Second Year, in Computer department.",
+    image: achievementFirstTopperSecondYear,
+  },
+];
+
+/**
+ * Internships and jobs — `engagementTag`: e.g. "Summer internship", "Semester-long internship", "Full time".
+ * `logo`: imported asset or public URL; omit for letter fallback.
+ */
+export const workExperience = [
+  {
+    id: "1",
+    role: "Software Development Intern",
+    engagementTag: "6-month internship",
+    company: "ElasticRun",
+    dateRange: "Jan 5, 2025 — Jul 5, 2025",
+    location: "Pune, Maharashtra, India",
+    logo: logoElasticRun,
+    summary:
+      "Developing and maintaining cross-platform frontend applications using Flutter. Implementing scalable state management using BLoC architecture to ensure maintainable and testable code. Contributing to two enterprise applications: Warehouse Management System (WMS) – enhancing operational workflows, inventory tracking UI, and performance optimization. Client Portal – building responsive dashboards, forms, and user interaction modules. Collaborating with backend and QA teams to integrate REST APIs and ensure seamless data flow. Optimizing UI performance and resolving production issues to improve application stability. Following clean architecture principles and reusable component design patterns. Participating in code reviews and maintaining version control using Git.",
+    stack: ["BLoC", "Dart", "Flutter", "GitLab"],
+  },
+  {
+    id: "2",
+    role: "Full Stack Developer Intern",
+    engagementTag: "Semester-long internship",
+    company: "Kreeda Labs",
+    dateRange: "Aug 4, 2025 — Dec 31, 2025",
+    location: "Pune, Maharashtra, India",
+    logo: logoKreedaLabs,
+    summary:
+      "Assist in developing and maintaining web applications using React.js, Node.js, Express.js, and MongoDB. Implement front-end designs using TypeScript, React, and modern UI libraries such as Tailwind CSS and Material-UI. Support backend development tasks, including API integration, database interactions, and authentication mechanisms. Learn and apply best coding practices, version control (Git), and Agile development methodologies.",
+    stack: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Git",
+      "GitHub",
+      "Agile",
+    ],
+  },
+  {
+    id: "3",
+    role: "Software Development Intern",
+    engagementTag: "Summer internship",
+    company: "Core-Decimal Solutions",
+    dateRange: "Feb 3, 2025 — Aug 14, 2025",
+    location: "Pune, Maharashtra, India",
+    logo: logoCoreDecimal,
+    summary:
+      "Assisting in project outlining; collaborating with team members to write business logic, front-ending with Vue.js and back-ending with Express.js and Sequelize; identifying optimal techniques from available information sources and prototyping components/modules for development approval; contributing innovative ideas and solutions to enhance the project's efficiency and effectiveness.",
+    stack: ["Vue.js", "Express.js", "MySQL", "Bootstrap", "Sequelize"],
+  },
+];
 
 export const certificates = [
   {

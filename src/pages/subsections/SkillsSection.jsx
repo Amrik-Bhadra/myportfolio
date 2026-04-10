@@ -1,24 +1,49 @@
 import React from "react";
-// import html from "../../assets/icons/html.svg";
+import { motion as Motion } from "framer-motion";
 import SkillsDiv from "../../components/skills_component.jsx/SkillsDiv";
+import SectionHeading from "../../components/SectionHeading";
 import { skills } from "../../utils/dataProvider";
+import { stagger, fadeItem, viewportOnce } from "../../lib/motion";
+
+const SKILL_CATEGORY_TITLES = {
+  frontend: "Frontend",
+  backend: "Backend",
+  database: "Database",
+  devops: "Devops",
+  tools: "tools",
+};
 
 const SkillsSection = () => {
   return (
-    <div
+    <section
       id="skills"
-      className="relative min-h-screen w-screen bg-[#0D1117] flex items-center justify-center py-10 px-6 md:px-6"
+      className="relative min-h-screen w-full scroll-mt-24 lg:scroll-mt-12 bg-transparent flex items-center justify-center py-16 md:py-20 px-4 sm:px-6"
     >
-      <div className="w-[85%] flex flex-col gap-y-3">
-        <h2 className="text-4xl font-bold text-[#E2E8F0] uppercase text-center">
-          My Skills
-        </h2>
+      <div className="w-full max-w-6xl flex flex-col gap-y-10">
+        <SectionHeading
+          eyebrow="Stack"
+          title="Skills & Tools"
+          subtitle="Technologies I use to design interfaces, ship APIs, and deploy with confidence."
+        />
 
-        {Object.entries(skills).map(([category, skillsList]) => (
-          <SkillsDiv key={category} title={category} skillsList={skillsList} />
-        ))}
+        <Motion.div
+          className="flex flex-col gap-y-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={stagger(0.06)}
+        >
+          {Object.entries(skills).map(([category, skillsList]) => (
+            <Motion.div key={category} variants={fadeItem}>
+              <SkillsDiv
+                title={SKILL_CATEGORY_TITLES[category] ?? category}
+                skillsList={skillsList}
+              />
+            </Motion.div>
+          ))}
+        </Motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

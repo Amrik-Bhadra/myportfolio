@@ -1,140 +1,134 @@
-import React, { useEffect, useRef } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from "react-icons/fa";
-import { gsap } from "gsap";
-// import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { motion as Motion } from "framer-motion";
+import { fadeUp, stagger, fadeItem, viewportOnce } from "../../lib/motion";
+
+const socialLinks = [
+  {
+    href: "https://github.com/Amrik-Bhadra",
+    icon: FaGithub,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/amrik-bhadra/",
+    icon: FaLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:amrik.bhadra@gmail.com",
+    icon: FaEnvelope,
+    label: "Email",
+  },
+];
 
 const HeroSection = () => {
-  const heroRef = useRef(null);
-  const textRef = useRef(null);
-  const socialRef = useRef(null);
-  const btnRef = useRef(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    // Hero text fade-in
-    tl.fromTo(
-      textRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1 }
-    )
-
-      // Social Icons slide-in
-      .fromTo(
-        socialRef.current.children,
-        { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, stagger: 0.2, duration: 0.8 },
-        "-=0.5"
-      )
-
-      // Button scale effect
-      .fromTo(
-        btnRef.current,
-        { opacity: 0, scale: 0.5 },
-        { opacity: 1, scale: 1, duration: 0.6 },
-        "-=0.3"
-      );
-  }, []);
-
   return (
-    <div
-      ref={heroRef}
+    <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center gap-y-6 text-center
-       bg-[linear-gradient(-20deg,#141414_0%,#1a1a1a_50%,#2b5876_100%)] font-roboto text-white"
+      className="relative min-h-screen min-h-[100dvh] flex flex-col justify-center items-center gap-y-8 text-center dev-hero-gradient text-white px-4 pt-8 pb-16 overflow-hidden"
+      aria-label="Introduction"
     >
-      {/* Profile Image with Glow Effect */}
-      <motion.div
-        className="relative w-45 h-45 rounded-full overflow-hidden border-[3px] border-[#6a85b6]
-             shadow-[0_0_30px_rgba(106,133,182,0.8)] mb-3"
-        animate={{
-          boxShadow: [
-            "0 0 30px rgba(106,133,182,0.8)",
-            "0 0 50px rgba(106,133,182,1)",
-            "0 0 30px rgba(106,133,182,0.8)",
-          ],
-          scale: [1, 1.05, 1], // Subtle pulsating effect
-        }}
-        transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-      >
-        <img
-          src="/profilePic.jpg"
-          alt="Profile"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
-
-      {/* Text Section */}
-      <div ref={textRef} className="flex flex-col gap-y-2 items-center">
-        <h1 className="text-4xl sm:text-[2xl] lg:text-[3.5rem] font-semibold text-[#ccc] flex items-center gap-x-3">
-          <span
-            className="bg-gradient-to-r from-[#6a85b6] to-[#bac8e0] 
-            bg-clip-text text-transparent"
-          >
-            Amrik Bhadra
-          </span>
-        </h1>
-        <motion.h2
-          className="text-[1.2rem] sm:text-[3xl] lg:text-[2rem] font-normal text-[#ccc] bg-clip-text 
-         drop-shadow-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          Frontend Developer | Java | Cloud Enthusiast
-        </motion.h2>
+      <div className="hero-backdrop" aria-hidden>
+        <div className="hero-backdrop__mesh" />
+        <div className="hero-backdrop__orb hero-backdrop__orb--a" />
+        <div className="hero-backdrop__orb hero-backdrop__orb--b" />
+        <div className="hero-backdrop__orb hero-backdrop__orb--c" />
+        <div className="hero-backdrop__grid" />
+        <div className="hero-backdrop__vignette" />
       </div>
 
-      {/* Social Media Icons */}
-      <div ref={socialRef} className="flex gap-x-5 mt-5">
-        {[
-          { href: "https://github.com/Amrik-Bhadra", icon: <FaGithub />, label: "GitHub" },
-          {
-            href: "https://www.linkedin.com/in/amrik-bhadra/",
-            icon: <FaLinkedin />,
-            label: "LinkedIn",
-          },
-          {
-            href: "mailto:amrik.bhadra@gmail.com",
-            icon: <FaEnvelope />,
-            label: "Email",
-          },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="relative flex flex-col items-center group"
-          >
-            {/* Social Icon Link */}
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href={item.href}
-              target="_blank"
-              className="h-[8vh] w-[8vh] text-xl rounded-full flex items-center justify-center 
-                   bg-[rgba(51,51,51,0.2)] backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
-                   shadow-[1px_1px_13px_rgba(238,238,238,0.3)] hover:bg-[rgba(51,51,51,0.6)] 
-                   transition-all ease hover:cursor-pointer relative"
-            >
-              {item.icon}
-            </motion.a>
-
-            {/* Tooltip with White Background & White Pointer */}
-            <div
-              className="absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 
-                   bg-white text-black text-xs px-3 py-1 rounded-md shadow-md 
-                   opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 
-                   transition-all duration-300 ease-in-out pointer-events-none
-                   before:content-[''] before:absolute before:top-[-5px] before:left-1/2 
-                   before:-translate-x-1/2 before:border-[6px] before:border-transparent 
-                   before:border-b-white"
-            >
-              {item.label}
+      <Motion.div
+        className="relative z-10 w-[min(92vw,720px)] flex flex-col items-center gap-y-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        variants={stagger(0.1)}
+      >
+        <Motion.div variants={fadeItem} className="relative mb-1 flex justify-center">
+          <div className="hero-avatar-wrap">
+            <span className="hero-avatar-ripple" />
+            <span className="hero-avatar-ripple hero-avatar-ripple--2" />
+            <span className="hero-avatar-ripple hero-avatar-ripple--3" />
+            <div className="hero-avatar-ring">
+              <div className="hero-avatar-inner">
+                <img
+                  src="/profilePic.jpg"
+                  alt="Amrik Bhadra"
+                  className="w-full h-full object-cover"
+                  width={172}
+                  height={172}
+                  fetchPriority="high"
+                />
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+        </Motion.div>
 
-    </div>
+        <Motion.div variants={fadeUp} className="flex flex-col gap-y-3 items-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight flex flex-wrap justify-center gap-x-3">
+            <span className="bg-gradient-to-r from-[#bae6fd] via-[#38bdf8] to-[#a5b4fc] bg-clip-text text-transparent">
+              Amrik Bhadra
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl font-normal text-[var(--text-muted)] max-w-xl leading-relaxed">
+            Frontend Developer · Java · Cloud
+          </p>
+        </Motion.div>
+
+        <Motion.div
+          variants={fadeItem}
+          className="flex flex-wrap justify-center gap-4 mt-2"
+          role="list"
+          aria-label="Social links"
+        >
+          {socialLinks.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.label} className="relative flex flex-col items-center group" role="listitem">
+                <Motion.a
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                  className="h-12 w-12 sm:h-14 sm:w-14 text-lg sm:text-xl rounded-full flex items-center justify-center
+                    bg-white/[0.06] backdrop-blur-md border border-white/15
+                    shadow-[0_8px_32px_rgba(0,0,0,0.35)] hover:bg-white/[0.12] hover:border-[#38bdf8]/40
+                    transition-colors duration-300"
+                >
+                  <Icon />
+                </Motion.a>
+                <div
+                  className="absolute bottom-[-38px] left-1/2 -translate-x-1/2 
+                    bg-[var(--bg-card)] text-[var(--text-primary)] text-xs px-3 py-1 rounded-md border border-white/10
+                    opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 
+                    transition-all duration-300 pointer-events-none whitespace-nowrap
+                    before:content-[''] before:absolute before:top-[-5px] before:left-1/2 
+                    before:-translate-x-1/2 before:border-[6px] before:border-transparent before:border-b-[var(--bg-card)]"
+                >
+                  {item.label}
+                </div>
+              </div>
+            );
+          })}
+        </Motion.div>
+
+        <Motion.div variants={fadeUp} className="mt-4">
+          <a
+            href="#about"
+            className="inline-flex flex-col items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors group"
+          >
+            <span className="font-mono tracking-widest uppercase text-[10px] sm:text-xs">
+              Scroll
+            </span>
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] group-hover:border-[#38bdf8]/50">
+              <FaChevronDown className="animate-bounce text-[var(--accent)] opacity-90" aria-hidden />
+            </span>
+          </a>
+        </Motion.div>
+      </Motion.div>
+    </section>
   );
 };
 

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { motion as Motion } from "framer-motion";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import SelectedHackathonModal from "./SelectedHackathonModal";
+import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
 
 const HackathonContainer = ({ hackathons }) => {
   const [selectedHackathon, setSelectedHackathon] = useState(null);
@@ -11,52 +13,55 @@ const HackathonContainer = ({ hackathons }) => {
 
   return (
     <div className="w-full relative">
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 overflow-y-auto no-scrollbar"
-        style={{
-          maxHeight: "750px",
-        }}
+      <Motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        variants={stagger(0.07)}
       >
         {hackathons.map((hack, index) => (
-          <div
-            key={index}
-            className="bg-[#161B22] border border-gray-600 rounded-lg p-4 flex flex-col shadow-lg transition-transform duration-300"
+          <Motion.article
+            key={hack.id ?? index}
+            variants={fadeItem}
+            className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
           >
-            <div className="w-full aspect-[4/3] overflow-hidden rounded-md">
+            <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0a0e14]">
               <img
                 src={hack.thumbnail}
                 alt={hack.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
               />
             </div>
 
-            <div className="mt-3 w-full flex flex-col items-start gap-y-1">
-              <h3 className="text-lg font-semibold text-white mb-2">
+            <div className="p-5 flex flex-col gap-3 flex-1">
+              <h3 className="text-lg font-semibold text-[var(--text-primary)] leading-snug">
                 {hack.title}
               </h3>
-              <span className="flex items-center gap-x-2 text-[#ccc] text-base">
-                <CiCalendarDate className="text-xl" />
-                <p>{hack.date}</p>
+              <span className="flex items-center gap-x-2 text-[var(--text-muted)] text-sm">
+                <CiCalendarDate className="text-lg text-[var(--accent)] shrink-0" aria-hidden />
+                <span>{hack.date}</span>
               </span>
-              <div className="w-full flex justify-between">
-                <span className="flex items-center gap-x-2 text-[#ccc] text-base">
-                  <IoLocationOutline className="text-lg" />
-                  <p>{hack.venue}</p>
+              <div className="flex flex-wrap items-end justify-between gap-3 mt-auto pt-1">
+                <span className="flex items-start gap-x-2 text-[var(--text-muted)] text-sm min-w-0">
+                  <IoLocationOutline className="text-lg text-[var(--accent)] shrink-0 mt-0.5" aria-hidden />
+                  <span>{hack.venue}</span>
                 </span>
                 <button
+                  type="button"
                   onClick={() => setSelectedHackathon(hack)}
-                  className="text-sm px-3 py-2 rounded-md bg-[#46464661] border border-[#cccccc65] hover:bg-[#8ab4f87b] transition-all ease cursor-pointer flex items-center gap-x-1"
+                  className="text-sm px-3 py-2 rounded-lg bg-white/[0.06] border border-white/10 hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] transition-all cursor-pointer inline-flex items-center gap-x-1 shrink-0"
                 >
-                  View Details
-                  <MdOutlineArrowOutward className="text-base" />
+                  Details
+                  <MdOutlineArrowOutward className="text-base" aria-hidden />
                 </button>
               </div>
             </div>
-          </div>
+          </Motion.article>
         ))}
-      </div>
+      </Motion.div>
 
-      {/* Modal */}
       {selectedHackathon && (
         <SelectedHackathonModal
           handleCloseModal={handleCloseModal}

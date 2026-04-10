@@ -1,16 +1,18 @@
 import React from "react";
 import SkillsCard from "./SkillsCard";
 
-const SkillsDiv = ({title, skillsList}) => {
+const SkillsDiv = ({ title, skillsList }) => {
   return (
-    <div className="p-3 flex flex-col gap-y-3">
-      <h3 className="text-[#8AB4F8] text-xl font-semibold capitalize">{title}</h3>
-      <div className="p-3 flex gap-x-4 overflow-x-auto no-scrollbar">
-        {
-            skillsList.map((skill, index)=>(
-                <SkillsCard key={index} img={skill.image} title={skill.name} />
-            ))
-        }
+    <div className="py-2 flex flex-col gap-y-4">
+      <h3 className="text-lg font-semibold font-mono tracking-tight leading-relaxed">
+        <span className="text-[var(--text-muted)]">{"<!-- "}</span>
+        <span className="text-[var(--accent)]">{title}</span>
+        <span className="text-[var(--text-muted)]">{" -->"}</span>
+      </h3>
+      <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1 scroll-smooth">
+        {skillsList.map((skill, index) => (
+          <SkillsCard key={`${skill.name}-${index}`} img={skill.image} title={skill.name} />
+        ))}
       </div>
     </div>
   );

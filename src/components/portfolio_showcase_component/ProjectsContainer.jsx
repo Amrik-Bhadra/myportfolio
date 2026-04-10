@@ -1,50 +1,70 @@
 import React from "react";
+import { motion as Motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
 
 const ProjectsContainer = ({ projects }) => {
   return (
     <div className="w-full">
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 overflow-y-auto no-scrollbar"
-        style={{
-          maxHeight: "750px", // Approx height for 2 rows (adjust if needed)
-        }}
+      <Motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        variants={stagger(0.07)}
       >
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-[#161B22] border border-gray-600 rounded-lg p-4 flex flex-col shadow-lg transition-transform duration-300"
+          <Motion.article
+            key={project.id ?? index}
+            variants={fadeItem}
+            className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
           >
-            <div className="rounded-md aspect-auto w-full overflow-clip border border-[#cccccc71]">
+            <div className="relative rounded-t-xl overflow-hidden border-b border-white/[0.06] aspect-[16/10] bg-[#0a0e14]">
               <img
                 src={project.thumbnail}
-                alt={`${project.thumbnail}`}
-                className="w-full object-cover"
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0e14]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                aria-hidden
               />
             </div>
 
-            <div className="mt-3 w-full flex flex-col items-start gap-y-2">
-              <h3 className="text-base font-medium text-[#eee]">
+            <div className="p-5 flex flex-col flex-1 gap-3">
+              <h3 className="text-base font-semibold text-[var(--text-primary)] leading-snug line-clamp-2">
                 {project.title}
               </h3>
-              <p className="text-sm text-[#ccc]">{project.description}</p>
-              <div className="flex items-center justify-between w-full mt-2">
+              <p className="text-sm text-[var(--text-muted)] line-clamp-2 flex-1">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
                 <a
                   href={project.project_link}
-                  className="text-sm flex items-center gap-x-2 text-[#8AB4F8] font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm inline-flex items-center gap-x-2 text-[var(--accent)] font-medium hover:underline underline-offset-4"
                 >
-                  {project.hosted_type} <FiExternalLink className="text-base" />
+                  {project.hosted_type} <FiExternalLink className="text-base shrink-0" />
                 </a>
-                <button className="text-sm px-3 py-2 rounded-md bg-[#46464661] border border-[#cccccc65] hover:bg-[#8ab4f87b] transition-all ease cursor-pointer flex items-center gap-x-1">
-                  View Details
-                  <MdOutlineArrowOutward className="text-base"/>
-                </button>
+                <a
+                  href={project.github_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm px-3 py-2 rounded-lg bg-white/[0.06] border border-white/10 hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] transition-all cursor-pointer inline-flex items-center gap-x-1.5"
+                >
+                  <FaGithub className="text-base" aria-hidden />
+                  Code
+                  <MdOutlineArrowOutward className="text-base" aria-hidden />
+                </a>
               </div>
             </div>
-          </div>
+          </Motion.article>
         ))}
-      </div>
+      </Motion.div>
     </div>
   );
 };
