@@ -206,14 +206,14 @@ export const workExperience = [
   {
     id: "1",
     role: "Software Development Intern",
-    engagementTag: "6-month internship",
+    engagementTag: "Semester-long internship",
     company: "ElasticRun",
-    dateRange: "Jan 5, 2025 — Jul 5, 2025",
+    dateRange: "Jan 5, 2026 — Jun 30, 2026",
     location: "Pune, Maharashtra, India",
     logo: logoElasticRun,
     summary:
       "Developing and maintaining cross-platform frontend applications using Flutter. Implementing scalable state management using BLoC architecture to ensure maintainable and testable code. Contributing to two enterprise applications: Warehouse Management System (WMS) – enhancing operational workflows, inventory tracking UI, and performance optimization. Client Portal – building responsive dashboards, forms, and user interaction modules. Collaborating with backend and QA teams to integrate REST APIs and ensure seamless data flow. Optimizing UI performance and resolving production issues to improve application stability. Following clean architecture principles and reusable component design patterns. Participating in code reviews and maintaining version control using Git.",
-    stack: ["BLoC", "Dart", "Flutter", "GitLab"],
+    stack: ["Dart", "Flutter", "BLoC", "GitLab", "Jira", "Git"],
   },
   {
     id: "2",

@@ -48,7 +48,7 @@ const AboutSection = () => {
               </h3>
             </div>
             <p className="text-[var(--text-muted)] mt-4 text-justify leading-relaxed">
-              Hi, I am a third-year Computer Engineering student with a passion for Java development
+              Hi, I am a Final Year Computer Engineering student with a passion for Java, MERN Stack,
               and cloud services. I have hands-on experience building applications with React.js and
               Express.js, with deployments on AWS EC2. I am always eager to learn new technologies,
               upskill, and contribute effectively to real-world projects.
@@ -82,6 +82,19 @@ const AboutSection = () => {
               </h3>
             </div>
             <ul className="text-[var(--text-muted)] mt-6 space-y-4 flex flex-col">
+            <li className="rounded-lg pl-4 py-3 border-l-2 border-[var(--accent)]/40 bg-white/[0.02]">
+                <div className="flex flex-col gap-y-2">
+                  <h4 className="text-[var(--text-primary)] text-[1.05rem] font-medium">
+                    MIT Academy of Engineering (2022 - 2026)
+                  </h4>
+                  <span className="flex gap-2 items-center text-sm">
+                    <span>CGPA</span>
+                    <span className="px-2 py-0.5 text-xs font-semibold bg-[var(--accent-soft)] text-[var(--accent)] rounded-md border border-[var(--accent)]/30">
+                      9.72
+                    </span>
+                  </span>
+                </div>
+              </li>
               <li className="rounded-lg pl-4 py-3 border-l-2 border-[var(--accent)]/40 bg-white/[0.02]">
                 <div className="flex flex-col gap-y-2">
                   <h4 className="text-[var(--text-primary)] text-[1.05rem] font-medium">
@@ -101,19 +114,6 @@ const AboutSection = () => {
                       </span>
                     </span>
                   </div>
-                </div>
-              </li>
-              <li className="rounded-lg pl-4 py-3 border-l-2 border-[var(--accent)]/40 bg-white/[0.02]">
-                <div className="flex flex-col gap-y-2">
-                  <h4 className="text-[var(--text-primary)] text-[1.05rem] font-medium">
-                    MIT Academy of Engineering (2022 - 2026)
-                  </h4>
-                  <span className="flex gap-2 items-center text-sm">
-                    <span>CGPA</span>
-                    <span className="px-2 py-0.5 text-xs font-semibold bg-[var(--accent-soft)] text-[var(--accent)] rounded-md border border-[var(--accent)]/30">
-                      9.72
-                    </span>
-                  </span>
                 </div>
               </li>
             </ul>
