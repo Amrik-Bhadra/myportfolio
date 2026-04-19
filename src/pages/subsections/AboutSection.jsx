@@ -6,8 +6,10 @@ import { FaCode, FaLocationDot } from "react-icons/fa6";
 import { BsStack } from "react-icons/bs";
 import { BiHeadphone } from "react-icons/bi";
 
-import resume from "../../assets/myresume.pdf";
 import ResumeModal from "../../components/about_components/ResumeModal";
+
+/** Served from /public — stable URL so downloads keep the filename (Vite hashes imported assets). */
+const RESUME_PDF = "/Amrik_Bhadra_Resume.pdf";
 import CodingProfileCard from "../../components/about_components/CodingProfileCard";
 import SectionHeading from "../../components/SectionHeading";
 
@@ -61,7 +63,7 @@ const AboutSection = () => {
               </button>
 
               <a
-                href={resume}
+                href={RESUME_PDF}
                 download="Amrik_Bhadra_Resume.pdf"
                 className="px-5 py-2.5 rounded-lg font-medium border border-[var(--accent)]/50 text-[var(--accent)] bg-[var(--accent-soft)] hover:bg-[var(--accent)]/20 transition-all cursor-pointer"
               >
@@ -203,7 +205,7 @@ const AboutSection = () => {
           onClose={() => {
             setIsOpenResume(false);
           }}
-          resume={resume}
+          resume={RESUME_PDF}
         />
       )}
     </section>
