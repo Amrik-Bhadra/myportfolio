@@ -208,7 +208,7 @@ export const workExperience = [
     role: "Software Development Intern",
     engagementTag: "Semester-long internship",
     company: "ElasticRun",
-    dateRange: "Jan 5, 2026 — Jun 30, 2026",
+    dateRange: "Jan 5, 2026 — Present",
     location: "Pune, Maharashtra, India",
     logo: logoElasticRun,
     summary:
