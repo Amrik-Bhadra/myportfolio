@@ -6,11 +6,12 @@ import { skills } from "../../utils/dataProvider";
 import { stagger, fadeItem, viewportOnce } from "../../lib/motion";
 
 const SKILL_CATEGORY_TITLES = {
-  frontend: "Frontend",
+  programmingLanguages: "Programming Languages",
+  frontendFrameworks: "Frontend Frameworks",
   backend: "Backend",
   database: "Database",
-  devops: "Devops",
-  tools: "tools",
+  cloudAndDevops: "Cloud & DevOps",
+  testingAndTools: "Testing & Tools",
 };
 
 const SkillsSection = () => {
