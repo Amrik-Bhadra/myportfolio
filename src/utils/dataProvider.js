@@ -26,6 +26,8 @@ import gitlab from "../assets/icons/gitlab.svg";
 import postgres from "../assets/icons/postgres.svg";
 import supabase from "../assets/icons/supabase.svg";
 import mongodb from "../assets/icons/mongodb.svg";
+import csharp from "../assets/icons/CSharp.svg";
+import dotnet_core from "../assets/icons/NET_core.svg";
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -48,6 +50,7 @@ import codesprint_2025 from "../assets/certificates/CodeSprint2025_Certificate.p
 import pair_programming_2025 from "../assets/certificates/PairProgramming_Certificate.pdf";
 import pair_programming_2024 from "../assets/certificates/pair_programming_certificate.pdf";
 import genai_study_jam_2024 from "../assets/certificates/genai_study_jam_2024.pdf";
+import aws_cloud_practitioner from "../assets/certificates/AWS_Cloud_Practitioner_Amrik_Bhadra.pdf";
 
 
 // certificate thumbnails
@@ -68,6 +71,7 @@ import codesprint_2025_thumbnail from "../assets/certificate_thumbnails/codespri
 import pair_programming_2025_thumbnail from "../assets/certificate_thumbnails/pair_programming_2025_thumbnail.png";
 import pair_programming_2024_thumbnail from "../assets/certificate_thumbnails/pair_programming_2024_thumbnail.png";
 import genai_study_jam_2024_thumbnail from "../assets/certificate_thumbnails/genai_study_jam_2024_thumbnail.png";
+import aws_cloud_practitioner_thumbnail from "../assets/certificate_thumbnails/aws_clf.png";
 
 
 // project thumbnail
@@ -151,6 +155,8 @@ export const skills = {
     { name: "Java", image: java },
     { name: "Node.js", image: nodejs },
     { name: "Express.js", image: expressjs },
+    { name: "C#", image: csharp },
+    { name: ".NET Core", image: dotnet_core },
   ],
   database: [
     { name: "MySQL", image: mysql },
@@ -253,6 +259,14 @@ export const workExperience = [
 ];
 
 export const certificates = [
+  {
+    title: "AWS Certified Cloud Practitioner (CLF-02)",
+    issuer: "Amazon Web Services",
+    date: "13 May, 2026",
+    type: "pdf",
+    file: aws_cloud_practitioner,
+    thumbnail: aws_cloud_practitioner_thumbnail
+  },
   {
     title: "Industrial Internship (Super 30)",
     issuer: "Core Decimal Solutions",
