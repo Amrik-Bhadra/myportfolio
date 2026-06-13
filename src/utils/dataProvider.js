@@ -28,6 +28,8 @@ import supabase from "../assets/icons/supabase.svg";
 import mongodb from "../assets/icons/mongodb.svg";
 import csharp from "../assets/icons/CSharp.svg";
 import dotnet_core from "../assets/icons/NET_core.svg";
+import typescript from "../assets/icons/TypeScript.svg";
+import tailwindcssicon from "../assets/icons/TailwindCSS.svg";
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -146,10 +148,12 @@ export const skills = {
     { name: "HTML", image: html },
     { name: "CSS", image: css },
     { name: "JavaScript", image: javascript },
+    { name: "TypeScript", image: typescript },
     { name: "React", image: react },
     { name: "Vue", image: vue },
     { name: "Flutter", image: flutter },
     { name: "Dart", image: dart },
+    { name: "Tailwind Css", image: tailwindcssicon }
   ],
   backend: [
     { name: "Java", image: java },
