@@ -30,6 +30,9 @@ import csharp from "../assets/icons/CSharp.svg";
 import dotnet_core from "../assets/icons/NET_core.svg";
 import typescript from "../assets/icons/TypeScript.svg";
 import tailwindcssicon from "../assets/icons/TailwindCSS.svg";
+import cprograming from "../assets/icons/C.svg";
+import cplusplus from "../assets/icons/CPlusPlus.svg";
+import springboot from "../assets/icons/spring-boot-icon.svg";
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -144,22 +147,27 @@ export const keyExperties = [
 ];
 
 export const skills = {
-  frontend: [
-    { name: "HTML", image: html },
-    { name: "CSS", image: css },
+  programmingLanguages: [
+    { name: "Java", image: java },
     { name: "JavaScript", image: javascript },
     { name: "TypeScript", image: typescript },
+    { name: "C#", image: csharp },
+    { name: "HTML", image: html },
+    { name: "CSS", image: css },
+    { name: "Dart", image: dart },
+    { name: "C", image: cprograming },
+    { name: "C++", image: cplusplus },
+  ],
+  frontendFrameworks: [
     { name: "React", image: react },
     { name: "Vue", image: vue },
     { name: "Flutter", image: flutter },
-    { name: "Dart", image: dart },
-    { name: "Tailwind Css", image: tailwindcssicon }
+    { name: "Tailwind CSS", image: tailwindcssicon }
   ],
   backend: [
-    { name: "Java", image: java },
     { name: "Node.js", image: nodejs },
     { name: "Express.js", image: expressjs },
-    { name: "C#", image: csharp },
+    { name: "Spring Boot", image: springboot },
     { name: ".NET Core", image: dotnet_core },
   ],
   database: [
@@ -168,13 +176,13 @@ export const skills = {
     { name: "MongoDB", image: mongodb },
     { name: "Supabase", image: supabase },
   ],
-  devops: [
+  cloudAndDevops: [
     { name: "Git", image: git },
     { name: "GitHub", image: github },
     { name: "GitLab", image: gitlab },
     { name: "AWS", image: aws },
   ],
-  tools: [
+  testingAndTools: [
     { name: "Postman", image: postman },
     { name: "VS Code", image: vscode },
     { name: "Jira", image: jira },
