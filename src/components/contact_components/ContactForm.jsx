@@ -1,6 +1,6 @@
 import React from "react";
 import InputField from "../../components/contact_components/InputField";
-import { GrSend } from "react-icons/gr";
+import { FaArrowRight } from "react-icons/fa6";
 import emailjs from "emailjs-com";
 
 const ContactForm = ({ openModal, setOpenModal }) => {
@@ -11,7 +11,7 @@ const ContactForm = ({ openModal, setOpenModal }) => {
       email: e.target.email.value,
       title: e.target.subject.value,
       message: e.target.message.value,
-      time: new Date().toLocaleString(), 
+      time: new Date().toLocaleString(),
     };
 
     emailjs
@@ -29,36 +29,52 @@ const ContactForm = ({ openModal, setOpenModal }) => {
   };
 
   return (
-    <form onSubmit={handleSendEmail} className="flex flex-col gap-y-4">
-      <InputField label="Name" name="name" id="name" type="text" opt="input" />
+    <form onSubmit={handleSendEmail} className="flex flex-col gap-y-10 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
+        <InputField 
+          label="Full Name" 
+          name="name" 
+          id="name" 
+          type="text" 
+          opt="input" 
+          placeholder="John Doe" 
+        />
+        <InputField
+          label="Email Address"
+          name="email"
+          id="email"
+          type="email"
+          opt="input"
+          placeholder="john@example.com"
+        />
+      </div>
+      
       <InputField
-        label="Email"
-        name="email"
-        id="email"
-        type="email"
-        opt="input"
-      />
-      <InputField
-        label="Subject"
+        label="Project Type"
         name="subject"
         id="subject"
         type="text"
         opt="input"
+        placeholder="Website redesign"
       />
+
       <InputField
-        label="Message"
+        label="Tell Me About Your Project"
         name="message"
         id="message"
         type={null}
         opt="textarea"
+        placeholder="Describe your project, goals, and requirements..."
       />
 
       <button
         type="submit"
-        className="px-4 py-3 bg-[#60A5FA] text-white rounded-md text-normal shadow-lg hover:bg-[#4F8ED9] transition-all cursor-pointer mt-3 font-medium flex justify-center items-center gap-x-2"
+        className="relative w-full flex items-center justify-center py-4 mt-2 bg-[var(--accent)] text-white font-bold text-sm sm:text-base uppercase tracking-widest hover:brightness-110 hover:shadow-[0_0_20px_var(--accent-glow)] transition-all duration-300 group rounded-full"
       >
-        <p>Send</p>
-        <GrSend />
+        <span>Send Inquiry</span>
+        <span className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-[var(--accent)] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <FaArrowRight size={16} />
+        </span>
       </button>
     </form>
   );

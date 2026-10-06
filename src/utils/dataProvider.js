@@ -478,25 +478,7 @@ export const projects = [
     hosted_type: "Source Code",
     project_link: "https://github.com/Amrik-Bhadra/MovieHub",
     github_link: "https://github.com/Amrik-Bhadra/MovieHub"
-  },
-  {
-    id: "5",
-    title: "Secure Message Writer",
-    description: "This is project description",
-    thumbnail: securemessagewriter_thumbnail,
-    hosted_type: "Source Code",
-    project_link: "https://github.com/Amrik-Bhadra/SecureMessageWriter",
-    github_link: "https://github.com/Amrik-Bhadra/SecureMessageWriter"
-  },
-  {
-    id: "6",
-    title: "StudyMitra: OpenAI Based ChatBot",
-    description: "This is project description",
-    thumbnail: studymitra_thumnail,
-    hosted_type: "View Demo",
-    project_link: "https://studymitra.vercel.app/",
-    github_link: "https://github.com/Amrik-Bhadra/StudyMitra"
-  },
+  }
 ];
 
 export const hackathons = [
@@ -537,3 +519,41 @@ export const hackathons = [
     On 𝗝𝗮𝗻𝘂𝗮𝗿𝘆 𝟯𝟭, 𝟮𝟬𝟮𝟱, I attended the IBM SkillsBuild Hackathon Showcase, where the top 10 teams presented their innovative solutions. This event was truly inspiring and provided an excellent opportunity to not only gain fresh insights into cutting-edge solutions but also to network with like-minded individuals and build meaningful connections with other talented teams. The exchange of ideas and knowledge made this experience even more enriching.`
   }
 ];
+
+export const workingProcess = {
+  headline: "Turning Ideas Into\nMeaningful Digital\nExperiences.",
+  tools: [
+    "Java",
+    "Spring Boot",
+    "React",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+  ],
+  steps: [
+    {
+      number: "01",
+      title: "Requirement Analysis",
+      description:
+        "I begin by understanding project goals, defining system architecture, and establishing technical requirements.",
+    },
+    {
+      number: "02",
+      title: "System Design",
+      description:
+        "I design the database schema, API contracts, and component structure to build a scalable foundation.",
+    },
+    {
+      number: "03",
+      title: "Build & Integrate",
+      description:
+        "I develop the backend services and frontend interfaces, integrating them through well-defined APIs.",
+    },
+    {
+      number: "04",
+      title: "Test & Deploy",
+      description:
+        "I validate with thorough testing, optimize performance, and deploy to cloud infrastructure.",
+    },
+  ],
+};

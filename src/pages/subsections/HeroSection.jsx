@@ -1,31 +1,17 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion as Motion } from "framer-motion";
-import { fadeUp, stagger, fadeItem, viewportOnce } from "../../lib/motion";
-
-const socialLinks = [
-  {
-    href: "https://github.com/Amrik-Bhadra",
-    icon: FaGithub,
-    label: "GitHub",
-  },
-  {
-    href: "https://www.linkedin.com/in/amrik-bhadra/",
-    icon: FaLinkedin,
-    label: "LinkedIn",
-  },
-  {
-    href: "mailto:amrik.bhadra@gmail.com",
-    icon: FaEnvelope,
-    label: "Email",
-  },
-];
+import { projects } from "../../utils/dataProvider";
 
 const HeroSection = () => {
+  // Take the first project for the floating card
+  const featuredProject = projects[0];
+
   return (
     <section
       id="home"
-      className="relative min-h-screen min-h-[100dvh] flex flex-col justify-center items-center gap-y-8 text-center dev-hero-gradient text-white px-4 pt-8 pb-16 overflow-hidden"
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center dev-hero-gradient text-white overflow-hidden"
       aria-label="Introduction"
     >
       <div className="hero-backdrop" aria-hidden>
@@ -37,97 +23,146 @@ const HeroSection = () => {
         <div className="hero-backdrop__vignette" />
       </div>
 
+      {/* Crosshairs & Grid Lines for Aesthetic */}
+      <div className="absolute top-[20%] left-0 w-full border-t border-white/[0.04]" aria-hidden />
+      <div className="absolute top-[80%] left-0 w-full border-t border-white/[0.04]" aria-hidden />
+      <div className="absolute left-[20%] top-0 h-full border-l border-white/[0.04]" aria-hidden />
+      <div className="absolute left-[80%] top-0 h-full border-l border-white/[0.04]" aria-hidden />
+      <div className="absolute top-[20%] left-[20%] -translate-x-1/2 -translate-y-1/2 text-white/20 text-sm font-mono">+</div>
+      <div className="absolute top-[20%] left-[80%] -translate-x-1/2 -translate-y-1/2 text-white/20 text-sm font-mono">+</div>
+      <div className="absolute top-[80%] left-[20%] -translate-x-1/2 -translate-y-1/2 text-white/20 text-sm font-mono">+</div>
+      <div className="absolute top-[80%] left-[80%] -translate-x-1/2 -translate-y-1/2 text-white/20 text-sm font-mono">+</div>
+
+      {/* Giant Background Text */}
+      <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none overflow-hidden">
+        <Motion.h1
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="text-[28vw] font-black text-white/[0.04] leading-none whitespace-nowrap tracking-tighter"
+        >
+          AMRIK
+        </Motion.h1>
+      </div>
+
+      {/* Profile Image (Center Cutout) */}
       <Motion.div
-        className="relative z-10 w-[min(92vw,720px)] flex flex-col items-center gap-y-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-        variants={stagger(0.1)}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[1200px] h-[95vh] flex items-end justify-center pointer-events-none"
       >
-        <Motion.div variants={fadeItem} className="relative mb-1 flex justify-center">
-          <div className="hero-avatar-wrap">
-            <span className="hero-avatar-ripple" />
-            <span className="hero-avatar-ripple hero-avatar-ripple--2" />
-            <span className="hero-avatar-ripple hero-avatar-ripple--3" />
-            <div className="hero-avatar-ring">
-              <div className="hero-avatar-inner">
-                <img
-                  src="/profilePic.jpg"
-                  alt="Amrik Bhadra"
-                  className="w-full h-full object-cover"
-                  width={172}
-                  height={172}
-                  fetchPriority="high"
-                />
-              </div>
-            </div>
+        <img
+          src="/hero_image.png"
+          alt="Amrik Bhadra"
+          className="w-full h-full object-contain object-bottom drop-shadow-2xl"
+          fetchPriority="high"
+          style={{
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 15%, black 100%)",
+            maskImage: "linear-gradient(to top, transparent 0%, black 15%, black 100%)",
+          }}
+        />
+      </Motion.div>
+
+      {/* Content Overlay */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto h-full min-h-screen px-6 sm:px-10 flex flex-col pointer-events-none">
+        
+        {/* Left Side: Floating Intro Text */}
+        <Motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="absolute left-6 sm:left-10 lg:left-12 top-[10%] max-w-[280px] sm:max-w-[320px] pointer-events-auto"
+        >
+          <div className="hidden sm:block absolute -left-4 top-2.5 w-2 h-px bg-[var(--accent)]" />
+          <p className="text-xs sm:text-sm font-semibold tracking-[0.15em] leading-[1.8] text-white/90 uppercase">
+            I build modern digital experiences that are robust, smart and impactful.
+          </p>
+          <div className="flex gap-4 mt-6">
+            <a href="https://github.com/Amrik-Bhadra" target="_blank" rel="noreferrer" className="text-white/50 hover:text-[var(--accent)] transition-colors" aria-label="GitHub"><FaGithub size={20}/></a>
+            <a href="https://www.linkedin.com/in/amrik-bhadra/" target="_blank" rel="noreferrer" className="text-white/50 hover:text-[var(--accent)] transition-colors" aria-label="LinkedIn"><FaLinkedin size={20}/></a>
+            <a href="mailto:amrik.bhadra@gmail.com" className="text-white/50 hover:text-[var(--accent)] transition-colors" aria-label="Email"><FaEnvelope size={20}/></a>
           </div>
         </Motion.div>
 
-        <Motion.div variants={fadeUp} className="flex flex-col gap-y-3 items-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight flex flex-wrap justify-center gap-x-3">
-            <span className="bg-gradient-to-r from-[#bae6fd] via-[#38bdf8] to-[#a5b4fc] bg-clip-text text-transparent">
-              Amrik Bhadra
-            </span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl font-normal text-[var(--text-muted)] max-w-xl leading-relaxed">
-            Frontend Developer · Java · Cloud
-          </p>
-        </Motion.div>
-
+        {/* Bottom Left: Name & Copyright */}
         <Motion.div
-          variants={fadeItem}
-          className="flex flex-wrap justify-center gap-4 mt-2"
-          role="list"
-          aria-label="Social links"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="absolute left-6 sm:left-10 lg:left-12 bottom-10 sm:bottom-12 pointer-events-auto"
         >
-          {socialLinks.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.label} className="relative flex flex-col items-center group" role="listitem">
-                <Motion.a
-                  whileHover={{ scale: 1.08, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.label}
-                  className="h-12 w-12 sm:h-14 sm:w-14 text-lg sm:text-xl rounded-full flex items-center justify-center
-                    bg-white/[0.06] backdrop-blur-md border border-white/15
-                    shadow-[0_8px_32px_rgba(0,0,0,0.35)] hover:bg-white/[0.12] hover:border-[#38bdf8]/40
-                    transition-colors duration-300"
-                >
-                  <Icon />
-                </Motion.a>
-                <div
-                  className="absolute bottom-[-38px] left-1/2 -translate-x-1/2 
-                    bg-[var(--bg-card)] text-[var(--text-primary)] text-xs px-3 py-1 rounded-md border border-white/10
-                    opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 
-                    transition-all duration-300 pointer-events-none whitespace-nowrap
-                    before:content-[''] before:absolute before:top-[-5px] before:left-1/2 
-                    before:-translate-x-1/2 before:border-[6px] before:border-transparent before:border-b-[var(--bg-card)]"
-                >
-                  {item.label}
-                </div>
-              </div>
-            );
-          })}
+          <p className="text-sm font-mono text-[var(--accent)] mb-1 sm:mb-2 flex items-center gap-2">
+            ©{new Date().getFullYear()}
+            <span className="w-8 h-px bg-white/20 inline-block" />
+          </p>
+          <h2 className="text-6xl sm:text-7xl lg:text-[7rem] font-bold leading-none tracking-tighter text-white drop-shadow-lg">
+            AMRIK
+          </h2>
         </Motion.div>
 
-        <Motion.div variants={fadeUp} className="mt-4">
-          <a
-            href="#about"
-            className="inline-flex flex-col items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors group"
+        {/* Right Side: Floating Project Card */}
+        {featuredProject && (
+          <Motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="hidden lg:flex absolute right-10 lg:right-16 top-[16%] flex-col bg-white p-2 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 pointer-events-auto cursor-pointer max-w-[220px]"
+            onClick={() => window.open(featuredProject.project_link, "_blank")}
           >
-            <span className="font-mono tracking-widest uppercase text-[10px] sm:text-xs">
-              Scroll
-            </span>
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] group-hover:border-[#38bdf8]/50">
-              <FaChevronDown className="animate-bounce text-[var(--accent)] opacity-90" aria-hidden />
-            </span>
+            <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-100">
+              <img src={featuredProject.thumbnail} alt={featuredProject.title} className="w-full h-full object-cover" />
+            </div>
+            <div className="flex justify-between items-center px-2 py-2.5 text-[11px] font-bold text-gray-800">
+              <span className="flex items-center gap-1.5 truncate">
+                <span className="text-[10px] text-[var(--accent)]">✱</span> {featuredProject.title}
+              </span>
+              <span className="text-gray-400 shrink-0">/ Code</span>
+            </div>
+          </Motion.div>
+        )}
+
+        {/* Bottom Right: Let's Talk Card */}
+        <Motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+          className="absolute right-6 sm:right-10 lg:right-16 bottom-10 sm:bottom-12 pointer-events-auto"
+        >
+          <a
+            href="#contact"
+            className="flex items-center gap-4 bg-[#0a0e14]/80 backdrop-blur-xl border border-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(0,0,0,0.4)] hover:border-[var(--accent)]/50 hover:bg-white/[0.05] transition-all group"
+          >
+            <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-white/10">
+              <img src="/profilePic.jpg" alt="Amrik" className="w-full h-full object-cover object-top scale-110" />
+            </div>
+            <div className="flex flex-col flex-1 pr-4 min-w-[120px]">
+              <div className="flex items-center justify-between w-full mb-1">
+                <span className="text-xs text-[var(--text-muted)] font-medium">Let's Connect</span>
+                <span className="text-[10px] text-[var(--accent)] animate-pulse">✱</span>
+              </div>
+              <h3 className="text-sm font-semibold text-white">Amrik Bhadra</h3>
+              <p className="text-[10px] text-[var(--text-muted)] group-hover:text-white/80 transition-colors">Java Developer</p>
+            </div>
+            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-[var(--accent)] group-hover:text-white transition-colors shrink-0 shadow-inner">
+              <MdOutlineArrowOutward size={16} />
+            </div>
           </a>
         </Motion.div>
-      </Motion.div>
+
+        {/* Mobile Only: Scroll Indicator */}
+        <Motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex lg:hidden flex-col items-center pointer-events-auto"
+        >
+          <a href="#about" aria-label="Scroll down">
+            <FaChevronDown className="animate-bounce text-[var(--accent)] opacity-80" />
+          </a>
+        </Motion.div>
+
+      </div>
     </section>
   );
 };
