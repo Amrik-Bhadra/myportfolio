@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "./subsections/HeroSection";
 import Navbar from "../components/Navbar";
 import AboutSection from "./subsections/AboutSection";
+import WorkingProcessSection from "./subsections/WorkingProcessSection";
 import ExperienceSection from "./subsections/ExperienceSection";
 import ContactSection from "./subsections/ContactSection";
 import SkillsSection from "./subsections/SkillsSection";
@@ -14,6 +15,7 @@ const MyPortfolio = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <WorkingProcessSection />
       <ExperienceSection />
       <SkillsSection />
       <ProjectcertificationSection />

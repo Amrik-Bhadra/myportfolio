@@ -16,12 +16,13 @@ const SectionHeading = ({ eyebrow, title, subtitle, titleId }) => (
     )}
     <h2
       id={titleId}
-      className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[var(--text-primary)]"
+      className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--text-primary)] uppercase"
+      style={{ fontFamily: "var(--font-display)" }}
     >
       {title}
     </h2>
     {subtitle && (
-      <p className="mt-4 text-[var(--text-muted)] text-sm sm:text-base leading-relaxed">
+      <p className="mt-4 text-[var(--text-muted)] text-sm sm:text-base leading-relaxed normal-case">
         {subtitle}
       </p>
     )}
