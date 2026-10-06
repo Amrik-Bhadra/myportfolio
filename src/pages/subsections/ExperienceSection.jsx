@@ -59,8 +59,8 @@ const ExperienceCard = ({ job, align = "left" }) => {
     <Motion.article
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-12% 0px -12% 0px", amount: 0.2 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: false, margin: "-12% 0px -12% 0px", amount: 0.2 }}
+      transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.5 }}
       className={`surface-card p-5 sm:p-6 text-left min-w-0 ${alignRight ? "lg:text-right" : ""}`}
     >
       <div

@@ -4,7 +4,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import SelectedHackathonModal from "./SelectedHackathonModal";
-import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
+import { scaleUp, stagger, viewportOnce } from "../../lib/motion";
 
 const HackathonContainer = ({ hackathons }) => {
   const [selectedHackathon, setSelectedHackathon] = useState(null);
@@ -23,7 +23,7 @@ const HackathonContainer = ({ hackathons }) => {
         {hackathons.map((hack, index) => (
           <Motion.article
             key={hack.id ?? index}
-            variants={fadeItem}
+            variants={scaleUp}
             className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
           >
             <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0a0e14]">
