@@ -33,6 +33,7 @@ import tailwindcssicon from "../assets/icons/TailwindCSS.svg";
 import cprograming from "../assets/icons/C.svg";
 import cplusplus from "../assets/icons/CPlusPlus.svg";
 import springboot from "../assets/icons/spring-boot-icon.svg";
+import sqldeveloper from "../assets/icons/SQL_Developer.svg";
 
 // certificates (PDFs and Images)
 import java_basic_hackerrank from "../assets/certificates/java_basic_certificate.pdf";
@@ -151,12 +152,12 @@ export const skills = {
     { name: "Java", image: java },
     { name: "JavaScript", image: javascript },
     { name: "TypeScript", image: typescript },
-    { name: "C#", image: csharp },
+    // { name: "C#", image: csharp },
     { name: "HTML", image: html },
     { name: "CSS", image: css },
     { name: "Dart", image: dart },
-    { name: "C", image: cprograming },
-    { name: "C++", image: cplusplus },
+    // { name: "C", image: cprograming },
+    // { name: "C++", image: cplusplus },
   ],
   frontendFrameworks: [
     { name: "React", image: react },
@@ -165,12 +166,13 @@ export const skills = {
     { name: "Tailwind CSS", image: tailwindcssicon }
   ],
   backend: [
+    { name: "Spring Boot", image: springboot },
     { name: "Node.js", image: nodejs },
     { name: "Express.js", image: expressjs },
-    { name: "Spring Boot", image: springboot },
-    { name: ".NET Core", image: dotnet_core },
+    // { name: ".NET Core", image: dotnet_core },
   ],
   database: [
+    { name: "Oracle SQL", image: sqldeveloper },
     { name: "MySQL", image: mysql },
     { name: "PostgreSQL", image: postgres },
     { name: "MongoDB", image: mongodb },
