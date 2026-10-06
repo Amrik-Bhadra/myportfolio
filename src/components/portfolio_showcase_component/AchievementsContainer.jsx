@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { FaAward } from "react-icons/fa";
-import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
+import { scaleUp, stagger, viewportOnce } from "../../lib/motion";
 
 const AchievementImage = ({ src, title }) => {
   const [failed, setFailed] = useState(false);
@@ -44,7 +44,7 @@ const AchievementsContainer = ({ achievements }) => {
         {achievements.map((item, index) => (
           <Motion.article
             key={item.id ?? index}
-            variants={fadeItem}
+            variants={scaleUp}
             className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
           >
             <AchievementImage src={item.image} title={item.title} />

@@ -3,7 +3,7 @@ import { motion as Motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
+import { scaleUp, stagger, viewportOnce } from "../../lib/motion";
 
 const ProjectsContainer = ({ projects }) => {
   return (
@@ -18,7 +18,7 @@ const ProjectsContainer = ({ projects }) => {
         {projects.map((project, index) => (
           <Motion.article
             key={project.id ?? index}
-            variants={fadeItem}
+            variants={scaleUp}
             className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
           >
             <div className="relative rounded-t-xl overflow-hidden border-b border-white/[0.06] aspect-[16/10] bg-[#0a0e14]">

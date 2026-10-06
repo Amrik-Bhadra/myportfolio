@@ -3,7 +3,7 @@ import { motion as Motion } from "framer-motion";
 import SkillsDiv from "../../components/skills_component.jsx/SkillsDiv";
 import SectionHeading from "../../components/SectionHeading";
 import { skills } from "../../utils/dataProvider";
-import { stagger, fadeItem, viewportOnce } from "../../lib/motion";
+import { stagger, scaleUp, viewportOnce } from "../../lib/motion";
 
 const SKILL_CATEGORY_TITLES = {
   programmingLanguages: "Programming Languages",
@@ -35,7 +35,7 @@ const SkillsSection = () => {
           variants={stagger(0.06)}
         >
           {Object.entries(skills).map(([category, skillsList]) => (
-            <Motion.div key={category} variants={fadeItem}>
+            <Motion.div key={category} variants={scaleUp}>
               <SkillsDiv
                 title={SKILL_CATEGORY_TITLES[category] ?? category}
                 skillsList={skillsList}

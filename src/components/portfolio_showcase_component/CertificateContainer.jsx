@@ -1,7 +1,7 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
-import { fadeItem, stagger, viewportOnce } from "../../lib/motion";
+import { scaleUp, stagger, viewportOnce } from "../../lib/motion";
 
 const CertificateContainer = ({ certificates }) => {
   return (
@@ -20,7 +20,7 @@ const CertificateContainer = ({ certificates }) => {
           return (
             <Motion.article
               key={cert.title + index}
-              variants={fadeItem}
+              variants={scaleUp}
               className="group surface-card p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1"
             >
               <a

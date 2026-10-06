@@ -14,7 +14,7 @@ import CodingProfileCard from "../../components/about_components/CodingProfileCa
 import SectionHeading from "../../components/SectionHeading";
 
 import { codingProfileData, keyExperties } from "../../utils/dataProvider";
-import { stagger, fadeItem, viewportOnce } from "../../lib/motion";
+import { stagger, fadeItem, slideLeft, slideRight, viewportOnce } from "../../lib/motion";
 
 const AboutSection = () => {
   const [openResumeModal, setIsOpenResume] = useState(false);
@@ -38,7 +38,7 @@ const AboutSection = () => {
         variants={stagger(0.08)}
       >
         <div className="flex flex-col lg:flex-row gap-6">
-          <Motion.div variants={fadeItem} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
+          <Motion.div variants={slideRight} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
             <div className="flex gap-x-3">
               <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                 <FaUser className="text-base text-[var(--accent)]" />
@@ -72,7 +72,7 @@ const AboutSection = () => {
             </div>
           </Motion.div>
 
-          <Motion.div variants={fadeItem} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
+          <Motion.div variants={slideLeft} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
             <div className="flex gap-x-3">
               <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                 <IoSchool className="text-lg text-[var(--accent)]" />
@@ -121,7 +121,7 @@ const AboutSection = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6">
-          <Motion.div variants={fadeItem} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
+          <Motion.div variants={slideRight} className="lg:w-1/2 w-full surface-card p-6 md:p-8">
             <div className="flex gap-x-3">
               <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                 <FaCode className="text-base text-[var(--accent)]" />
@@ -146,7 +146,7 @@ const AboutSection = () => {
           </Motion.div>
 
           <div className="lg:w-1/2 w-full grid grid-rows-[auto_1fr] gap-6">
-            <Motion.div variants={fadeItem} className="surface-card p-6 md:p-8">
+            <Motion.div variants={slideLeft} className="surface-card p-6 md:p-8">
               <div className="flex gap-x-3">
                 <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                   <BsStack className="text-base text-[var(--accent)]" />
@@ -170,7 +170,7 @@ const AboutSection = () => {
             </Motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Motion.div variants={fadeItem} className="surface-card p-6 md:p-8 h-full">
+              <Motion.div variants={slideLeft} className="surface-card p-6 md:p-8 h-full">
                 <div className="flex gap-x-3">
                   <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                     <FaLocationDot className="text-base text-[var(--accent)]" />
@@ -182,7 +182,7 @@ const AboutSection = () => {
                 </p>
               </Motion.div>
 
-              <Motion.div variants={fadeItem} className="surface-card p-6 md:p-8 h-full">
+              <Motion.div variants={slideLeft} className="surface-card p-6 md:p-8 h-full">
                 <div className="flex gap-x-3">
                   <div className="inline-flex h-fit w-fit p-2 rounded-lg items-center justify-center border border-[#38bdf8]/40 bg-[var(--accent-soft)]">
                     <BiHeadphone className="text-base text-[var(--accent)]" />

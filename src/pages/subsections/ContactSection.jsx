@@ -9,7 +9,7 @@ import contactAnim from "../../assets/contact.json";
 import SuccessfulModal from "../../components/modals/SuccessfulModal";
 import ContactForm from "../../components/contact_components/ContactForm";
 import SectionHeading from "../../components/SectionHeading";
-import { fadeUp, stagger, fadeItem, viewportOnce } from "../../lib/motion";
+import { fadeUp, stagger, fadeItem, slideLeft, slideRight, viewportOnce } from "../../lib/motion";
 
 const ContactSection = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -87,7 +87,7 @@ const ContactSection = () => {
           </Motion.div>
 
           <Motion.div
-            variants={fadeItem}
+            variants={slideLeft}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
